@@ -1,10 +1,22 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/ui/groceries/tabs/grocery_grocery.dart';
 import '../../data/mock_grocery_repository.dart';
 import '../../models/grocery.dart';
 import 'grocery_form.dart';
+import 'grocery_tab.dart';
+import 'tabs/grocery_grocery.dart';
+
 
 class GroceryList extends StatefulWidget {
   const GroceryList({super.key});
+
+
+//  onGrocerySelected(String groceryId, BuildContext context) async {
+
+//     await Navigator.of(context).push(
+//         GroceryManage(groceryId: groceryId),
+//     );
+//   }
 
   @override
   State<GroceryList> createState() => _GroceryListState();
@@ -48,6 +60,7 @@ class _GroceryListState extends State<GroceryList> {
   }
 }
 
+
 class GroceryTile extends StatelessWidget {
   const GroceryTile({super.key, required this.grocery});
 
@@ -59,6 +72,10 @@ class GroceryTile extends StatelessWidget {
       leading: Container(width: 15, height: 15, color: grocery.category.color),
       title: Text(grocery.name),
       trailing: Text(grocery.quantity.toString()),
+      // onTap: () {
+      //   // onGrocerySelected(grocery, context);
+      // }
     );
   }
 }
+
